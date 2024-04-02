@@ -9,10 +9,10 @@
     <?php require("components/navBar.php") ?>
     <h1>Edit post stuff</h1>
 
-    <form>
-        <input type="text" value='<?php echo $result[0]["name"] ?>'>
-        <input type="text" value='<?php echo $result[0]["place"] ?>'>
-        <input type="text" value='<?php echo $result[0]["date"] ?>'>
+    <form method="POST" >
+        <input type="text" name="name" value='<?php echo $result[0]["name"] ?>'>
+        <input type="text" name="place" value='<?php echo $result[0]["place"] ?>'>
+        <input type="text" name="date" value='<?php echo $result[0]["date"] ?>'>
         <button>submit changes</button>
     </form>
 </body>

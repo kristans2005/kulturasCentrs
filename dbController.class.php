@@ -10,6 +10,16 @@ class dbController {
         $this->dbConnection = $dbConnections;
     }
 
+    public function editPost($id, $name, $place, $date){
+        $sql = (' UPDATE pienakumi
+                SET name = :name, place = :place, date = :date
+                WHERE id = '. $id .'; ');
+        $stmt = $this->dbConnection->dbConn->prepare($sql);
+        $stmt->bindParam(':date', $date);
+        $stmt->bindParam(':name', $name);
+        $stmt->bindParam(':place', $place);
+        $stmt->execute();
+    }
 
     public function showAll(){
         $result = $this->dbConnection->dbConn->query(' SELECT * FROM pienakumi ');
